@@ -91,7 +91,7 @@ void swap_node(int L, int R, node_t **list)
 {
     int L_value, R_value;
     node_t *tmp = *list, *L_node, *R_node;
-    
+
     for (int i = 0; i <= R; i++) {
         if (i == L) {
             L_value = tmp->value;
@@ -110,7 +110,7 @@ void swap_node(int L, int R, node_t **list)
 int get_node_value(node_t *n, int num)
 {
     for (int i = 0; i < num; i++)
-           n = n->next;
+        n = n->next;
     return n->value;
 }
 void quicksort_iter(node_t **list)
@@ -131,18 +131,18 @@ void quicksort_iter(node_t **list)
                 while (get_node_value(*list, R) >= piv && L < R)
                     R--;
                 if (L < R) {
-                    //arr[L++] = arr[R];
+                    // arr[L++] = arr[R];
                     swap_node(L, R, list);
                     L++;
                 }
                 while (get_node_value(*list, L) <= piv && L < R)
                     L++;
                 if (L < R)
-                    //arr[R--] = arr[L];//change array to linked list
+                    // arr[R--] = arr[L];//change array to linked list
                     swap_node(L, R, list);
-                    R--;
+                R--;
             }
-            //arr[L] = piv;//change array to linked list
+            // arr[L] = piv;//change array to linked list
             beg[i + 1] = L + 1;
             end[i + 1] = end[i];
             end[i++] = L;
